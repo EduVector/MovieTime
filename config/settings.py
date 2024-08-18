@@ -26,6 +26,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+AUTH_USER_MODEL = 'user.User'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -38,9 +40,10 @@ INSTALLED_APPS = [
 
     # build-in apps
     'rest_framework',
-    'drf-yasg',
+    'ckeditor',
 
     # local apps
+    'apps.common',
     'apps.movie',
     'apps.news',
     'apps.user',
@@ -118,7 +121,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = 'us'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'Asia/Tashkent'
 
