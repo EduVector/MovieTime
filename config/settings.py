@@ -89,6 +89,11 @@ WSGI_APPLICATION = 'config.wsgi.application'
 #     }
 # }
 
+DATABASE_ROUTERS = ['config.routers.DatabaseRouter']
+DATABASE_APPS_MAPPING = {
+    "movie": "movies",
+}
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -97,8 +102,17 @@ DATABASES = {
         'PASSWORD': '123',
         'HOST': 'localhost',
         'PORT': '5432',
+    },
+    'movies': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'movies',
+        'USER': 'husan',
+        'PASSWORD': '123',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.1/ref/settings/#auth-password-validators
